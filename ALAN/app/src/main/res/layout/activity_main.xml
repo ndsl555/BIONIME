@@ -8,9 +8,10 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="38dp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/material_dynamic_neutral90"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
