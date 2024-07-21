@@ -1,4 +1,4 @@
-package com.example.bionime.ui
+package com.example.bionime.viewmodel
 
 import androidx.lifecycle.*
 import com.example.bionime.data.Mask

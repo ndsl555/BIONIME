@@ -12,6 +12,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bionime.viewmodel.MaskViewModel
+import com.example.bionime.viewmodel.MaskViewModelFactory
 import com.example.bionime.R
 import com.example.bionime.data.MaskDatabase
 import com.example.bionime.repository.MaskRepository
