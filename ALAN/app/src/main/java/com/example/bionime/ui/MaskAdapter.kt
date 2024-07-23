@@ -1,12 +1,10 @@
 package com.example.bionime.ui
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bionime.R
 import com.example.bionime.data.Mask
+import com.example.bionime.databinding.ItemMaskBinding
 
 class MaskAdapter(private val onItemClick: (Mask) -> Unit) :
     RecyclerView.Adapter<MaskAdapter.MaskViewHolder>() {
@@ -19,8 +17,8 @@ class MaskAdapter(private val onItemClick: (Mask) -> Unit) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MaskViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_mask, parent, false)
-        return MaskViewHolder(view)
+        val binding = ItemMaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MaskViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MaskViewHolder, position: Int) {
@@ -31,19 +29,15 @@ class MaskAdapter(private val onItemClick: (Mask) -> Unit) :
 
     override fun getItemCount() = masks.size
 
-    class MaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
-        private val addressTextView: TextView = itemView.findViewById(R.id.addressTextView)
-        private val maskAdultTextView: TextView = itemView.findViewById(R.id.maskAdultTextView)
-        private val maskChildTextView: TextView = itemView.findViewById(R.id.maskChildTextView)
-        private val townTextView: TextView = itemView.findViewById(R.id.townTextView)
-
+    class MaskViewHolder(private val binding: ItemMaskBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(mask: Mask) {
-            nameTextView.text = mask.name
-            addressTextView.text = mask.address
-            maskAdultTextView.text = "成人口罩數: ${mask.maskAdult}"
-            maskChildTextView.text = "兒童口罩數: ${mask.maskChild}"
-            townTextView.text = mask.town
+            binding.apply {
+                nameTextView.text = mask.name
+                addressTextView.text = mask.address
+                maskAdultTextView.text = "成人口罩數: ${mask.maskAdult}"
+                maskChildTextView.text = "兒童口罩數: ${mask.maskChild}"
+                townTextView.text = mask.town
+            }
         }
     }
 }
