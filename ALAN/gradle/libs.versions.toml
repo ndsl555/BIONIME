@@ -13,12 +13,13 @@ room = "2.6.1"
 retrofit = "2.9.0"
 coroutines = "1.7.3"
 lifecycle = "2.7.0"
-
 mockk = "1.13.8"
 coroutinesTest = "1.7.3"
 archCoreTesting = "2.2.0"
 
 [libraries]
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+
 jsoup = { group = "org.jsoup", name = "jsoup", version = "1.14.3" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
@@ -41,16 +42,16 @@ converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", ve
 
 # Coroutines
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 
 # ViewModel and LiveData
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 
-
 # Testing
 androidx-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "archCoreTesting" }
-kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
