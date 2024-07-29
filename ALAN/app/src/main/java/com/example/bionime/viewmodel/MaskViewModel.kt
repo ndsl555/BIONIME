@@ -14,10 +14,11 @@ class MaskViewModel(private val repository: MaskRepository) : ViewModel() {
 
     private var currentTown: String? = null
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
 
     init {
         viewModelScope.launch {
-            repository.refreshMasks()
             updateTowns()
             updateMasks()
         }
@@ -50,6 +51,15 @@ class MaskViewModel(private val repository: MaskRepository) : ViewModel() {
         return repository.fetchQuote()
     }
 
+    fun refreshData() {
+        viewModelScope.launch {
+            _isLoading.value = true
+            repository.refreshMasks()
+            updateTowns()  // 更新城鎮spinner
+            updateMasks(currentTown)
+            _isLoading.value = false
+        }
+    }
 }
 
 class MaskViewModelFactory(private val repository: MaskRepository) : ViewModelProvider.Factory {
