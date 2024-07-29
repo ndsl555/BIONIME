@@ -14,6 +14,9 @@
       <SelectionState runConfigName="testRefreshMasks()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="MaskRepositoryTest (1)">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
       <SelectionState runConfigName="testFetchQuote()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
