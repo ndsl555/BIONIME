@@ -29,8 +29,7 @@ class MaskAdapter(private val onItemClick: (Mask) -> Unit) :
 
     override fun getItemCount() = masks.size
 
-    class MaskViewHolder(private val binding: ItemMaskBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class MaskViewHolder(private val binding: ItemMaskBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(mask: Mask) {
             binding.apply {
                 nameTextView.text = mask.name
