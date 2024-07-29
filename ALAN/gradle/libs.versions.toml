@@ -16,6 +16,7 @@ lifecycle = "2.7.0"
 mockk = "1.13.8"
 coroutinesTest = "1.7.3"
 archCoreTesting = "2.2.0"
+swiperefreshlayout = "1.1.0"
 
 [libraries]
 mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
@@ -51,6 +52,7 @@ androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecy
 # Testing
 androidx-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "archCoreTesting" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
 
 
 [plugins]
