@@ -26,7 +26,7 @@ class MaskRepository(private val maskDao: MaskDao) {
                 }
             maskDao.insertMasks(masks)
         } catch (e: Exception) {
-            // 斷網後,繼續使用localdb的數據
+            // 斷往後繼續使用localdb的數據
         }
     }
 
